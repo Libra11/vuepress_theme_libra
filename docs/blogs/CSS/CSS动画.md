@@ -1,9 +1,9 @@
 ---
 title: CSS动画
-category: csssdljfslf
+category: css
 desc: CSS动画详解
 tag:
-  - cssskdjfskdfjsld
+  - css
 picture: https://libra321.oss-cn-huhehaote.aliyuncs.com/blog/CSS%E5%8A%A8%E7%94%BB.png
 date: "2020-11-24"
 ---

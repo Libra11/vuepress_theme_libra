@@ -25,8 +25,8 @@
         <div class="mobile-classify-label">
           <mobile-label />
         </div>
-        <div class="tag-blog-mobile">
-          <span class="tag-title">{{ currentTag }}</span>
+        <div class="tags-blog-mobile">
+          <span class="tags-title">{{ $currentTag.key }}</span>
           <mobile-blog-item
             v-for="(item, index) in Blogs"
             :key="index"
@@ -38,8 +38,8 @@
             :category="item.frontmatter.category"
           />
         </div>
-        <div class="tag-blog">
-          <span class="tag-title">{{ currentTag }}</span>
+        <div class="tags-blog">
+          <span class="tags-title">{{ $currentTag.key }}</span>
           <div class="blog-container">
             <blog-item
               v-for="(item, index) in Blogs"
@@ -47,8 +47,8 @@
               :source="item.frontmatter.picture"
               :title="item.frontmatter.title"
               :content="item.frontmatter.desc"
-              :time="item.frontmatter.date"
               :path="item.path"
+              :time="item.frontmatter.date"
               :category="item.frontmatter.category"
             />
           </div>
@@ -59,10 +59,7 @@
         <info-card />
       </div>
     </div>
-    <pagination
-      :totalPages="Math.ceil(getAllBlogs().length / 8)"
-      :changePage="changePage"
-    ></pagination>
+    <pagination :totalPages="total" :changePage="changePage"></pagination>
     <my-footer></my-footer>
   </div>
 </template>
@@ -76,29 +73,38 @@ import InfoCard from "@theme/components/InfoCard";
 import MobileBlogItem from "@theme/components/MobileBlogItem";
 import MobileLabel from "@theme/components/MobileLabel";
 import Pagination from "@theme/components/Pagination";
-import { sortBlog } from "../utils";
 export default {
   data() {
     return {
-      currentTag: "All",
+      currentTag: "",
       Blogs: [],
+      total: 0,
     };
   },
+  watch: {
+    // 路由变化 重新更新数据赋值
+    $route(to, from) {
+      if (to.fullPath !== from.fullPath) {
+        this.refresh();
+      }
+    },
+  },
   methods: {
-    getAllBlogs() {
-      let pages = this.$site.pages;
-      console.log(pages)
-      return pages.filter((item) => {
-        const { date } = item.frontmatter;
-        return date !== undefined;
-      });
+    getBlogsByTag() {
+      return this.$pagination.pages;
     },
     changePage(n) {
-      this.Blogs = sortBlog(this.getAllBlogs()).slice((n - 1) * 8, 8 * n);
+      // this.$router
+      //   .push(`/tag/${this.$currentTag.key}/page/${n}`)
+      //   .catch(() => {});
+    },
+    refresh() {
+      this.total = this.$pagination._paginationPages.length;
+      this.Blogs = this.getBlogsByTag();
     },
   },
   created() {
-    this.Blogs = sortBlog(this.getAllBlogs()).slice(0, 8);
+    // this.refresh();
   },
   components: {
     MyHeader,
@@ -156,7 +162,7 @@ export default {
         }
         padding: 0 10px;
       }
-      .tag-blog-mobile {
+      .tags-blog-mobile {
         @media (min-width: 992px) {
           display: none;
         }
@@ -165,7 +171,7 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 0 10px;
-        .tag-title {
+        .tags-title {
           display: inline-block;
           font-size: 1.8rem;
           color: @whiteColor;
@@ -183,7 +189,7 @@ export default {
           }
         }
       }
-      .tag-blog {
+      .tags-blog {
         @media (max-width: 992px) {
           display: none;
         }
@@ -204,7 +210,7 @@ export default {
             margin-right: 20px;
           }
         }
-        .tag-title {
+        .tags-title {
           display: inline-block;
           font-size: 3rem;
           color: @whiteColor;

@@ -41,7 +41,10 @@
         </div>
         <div class="detail">
           <div>
-            <Content />
+            <div v-if="blog.photography">
+                <img v-for="(item, index) in blog.photographyList" :key="index" :src="item" alt="">
+            </div>
+            <Content v-else />
           </div>
         </div>
         <Comment v-if="$themeConfig.comment.showComment"/>
@@ -50,14 +53,6 @@
         <category-card />
         <info-card />
         <div class="list">
-          <!-- <li
-            v-for="(item, index) in hs"
-            :key="index"
-            class="catalog-list"
-            :style="`padding-left: ${(parseFloat(item.tagName[1]) - 1) * 20}px`"
-          >
-            <a :href="`#heading-${index}`" v-html="item.innerHTML"></a>
-          </li> -->
            <TOC/>
         </div>
       </div>
@@ -80,6 +75,7 @@ export default {
     return {
       hs: [],
       blog: {},
+      photographyList: []
     };
   },
   mounted() {
@@ -104,11 +100,20 @@ export default {
       };
     },
     refresh() {
-      this.blog = this.$frontmatter;
+      this.getBlogs()
+    },
+    getBlogs() {
+      if (this.$frontmatter.photography) {
+        this.blog = this.$frontmatter
+        console.log(this.blog)
+        this.photographyList = this.$frontmatter.photographyList
+      } else {
+        this.blog = this.$frontmatter
+      }
     },
   },
   created() {
-    this.blog = this.$frontmatter;
+    this.getBlogs()
   },
   components: {
     InfoCard,

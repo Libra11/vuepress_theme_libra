@@ -116,8 +116,8 @@ export default {
     getRecentBlogs() {
       let pages = this.$site.pages;
       return pages.filter((item) => {
-        const { date } = item.frontmatter;
-        return date !== undefined;
+        const { date, photography } = item.frontmatter;
+        return date !== undefined && !photography;
       });
     },
   },
@@ -136,7 +136,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import "@theme/common/color.less";
 .labels-container {
   display: flex;

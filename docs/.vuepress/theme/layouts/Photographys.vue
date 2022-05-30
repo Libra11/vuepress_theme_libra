@@ -22,11 +22,8 @@
     ></vue-particles>
     <div class="label-content">
       <div class="left">
-        <div class="mobile-classify-label">
-          <mobile-label />
-        </div>
-        <div class="tag-blog-mobile">
-          <span class="tag-title">{{ currentTag }}</span>
+        <div class="recently-blog-mobile">
+          <span class="recently-title">最近摄影</span>
           <mobile-blog-item
             v-for="(item, index) in Blogs"
             :key="index"
@@ -38,8 +35,9 @@
             :category="item.frontmatter.category"
           />
         </div>
-        <div class="tag-blog">
-          <span class="tag-title">{{ currentTag }}</span>
+
+        <div class="recently-blog">
+          <span class="recently-title">最近摄影</span>
           <div class="blog-container">
             <blog-item
               v-for="(item, index) in Blogs"
@@ -47,8 +45,8 @@
               :source="item.frontmatter.picture"
               :title="item.frontmatter.title"
               :content="item.frontmatter.desc"
-              :time="item.frontmatter.date"
               :path="item.path"
+              :time="item.frontmatter.date"
               :category="item.frontmatter.category"
             />
           </div>
@@ -59,10 +57,6 @@
         <info-card />
       </div>
     </div>
-    <pagination
-      :totalPages="Math.ceil(getAllBlogs().length / 8)"
-      :changePage="changePage"
-    ></pagination>
     <my-footer></my-footer>
   </div>
 </template>
@@ -70,45 +64,36 @@
 <script>
 import MyHeader from "@theme/components/Navbar";
 import MyFooter from "@theme/components/Footer";
+import MobileBlogItem from "@theme/components/MobileBlogItem";
 import BlogItem from "@theme/components/BlogItem";
 import LabelCard from "@theme/components/LabelCard";
 import InfoCard from "@theme/components/InfoCard";
-import MobileBlogItem from "@theme/components/MobileBlogItem";
-import MobileLabel from "@theme/components/MobileLabel";
-import Pagination from "@theme/components/Pagination";
 import { sortBlog } from "../utils";
 export default {
-  data() {
+   data() {
     return {
-      currentTag: "All",
       Blogs: [],
     };
-  },
-  methods: {
-    getAllBlogs() {
-      let pages = this.$site.pages;
-      console.log(pages)
-      return pages.filter((item) => {
-        const { date } = item.frontmatter;
-        return date !== undefined;
-      });
-    },
-    changePage(n) {
-      this.Blogs = sortBlog(this.getAllBlogs()).slice((n - 1) * 8, 8 * n);
-    },
-  },
-  created() {
-    this.Blogs = sortBlog(this.getAllBlogs()).slice(0, 8);
   },
   components: {
     MyHeader,
     MyFooter,
-    LabelCard,
-    InfoCard,
     BlogItem,
     MobileBlogItem,
-    MobileLabel,
-    Pagination,
+    LabelCard,
+    InfoCard
+  },
+  methods: {
+    getRecentBlogs() {
+      let pages = this.$site.pages;
+      return pages.filter((item) => {
+        const { photography } = item.frontmatter;
+        return photography !== undefined;
+      });
+    },
+  },
+  created() {
+    this.Blogs = sortBlog(this.getRecentBlogs()).slice(0, 8);
   },
 };
 </script>
@@ -156,7 +141,7 @@ export default {
         }
         padding: 0 10px;
       }
-      .tag-blog-mobile {
+      .recently-blog-mobile {
         @media (min-width: 992px) {
           display: none;
         }
@@ -165,7 +150,7 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 0 10px;
-        .tag-title {
+        .recently-title {
           display: inline-block;
           font-size: 1.8rem;
           color: @whiteColor;
@@ -183,12 +168,11 @@ export default {
           }
         }
       }
-      .tag-blog {
+      .recently-blog {
         @media (max-width: 992px) {
           display: none;
         }
         position: relative;
-        // margin-top: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -204,7 +188,7 @@ export default {
             margin-right: 20px;
           }
         }
-        .tag-title {
+        .recently-title {
           display: inline-block;
           font-size: 3rem;
           color: @whiteColor;

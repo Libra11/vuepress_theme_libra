@@ -1,6 +1,6 @@
 module.exports = {
   title: "Libra",
-  base: "/vuepress-theme-libra/",
+  base: "/",
   description: "a vuepress theme by libra",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -30,7 +30,7 @@ module.exports = {
     // 个人信息卡片
     infoCard: {
       // 头像
-      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/avatar.jpg",
+      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/%E6%91%84%E5%BD%B1/2022.05.22-1.JPG",
       // 姓名
       name: "Libra",
       // 邮箱
@@ -52,7 +52,7 @@ module.exports = {
       // github地址
       github: "https://github.com/Libra11",
       // 头像图片地址
-      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/avatar.jpg",
+      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/%E6%91%84%E5%BD%B1/2022.05.22-1.JPG",
     },
     comment: {
       showComment: true,

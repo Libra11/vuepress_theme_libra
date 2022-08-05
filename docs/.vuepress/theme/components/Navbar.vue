@@ -11,6 +11,9 @@
         <router-link to="/blog" class="link">博客</router-link>
       </li>
       <li class="menu-item">
+        <router-link to="/photography" class="link">摄影</router-link>
+      </li>
+      <li class="menu-item">
         <router-link to="/tag" class="link">标签</router-link>
       </li>
       <li class="menu-item">
@@ -69,6 +72,12 @@
             <router-link to="/blog">
               <i class="iconfont iconblog"></i>
               <i class="white">博客</i>
+            </router-link>
+          </li>
+          <li class="nav-menu-item" @click="handleMobileNav">
+            <router-link to="/photography">
+              <i class="iconfont iconblog"></i>
+              <i class="white">摄影</i>
             </router-link>
           </li>
           <li class="nav-menu-item" @click="handleMobileNav">

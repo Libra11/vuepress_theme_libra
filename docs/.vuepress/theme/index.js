@@ -1,7 +1,7 @@
 // pro 开发
-const { themeConfig } = require("../../docs/.vuepress/config.js");
+// const { themeConfig } = require("../../docs/.vuepress/config.js");
 // dev 开发
-// const { themeConfig } = require("../../.vuepress/config.js");
+const { themeConfig } = require("../../.vuepress/config.js");
 module.exports = {
   plugins: [
     [
@@ -43,6 +43,21 @@ module.exports = {
             layout: "Tags",
             // layout of the `scope page`
             scopeLayout: "Tag",
+            pagination: {
+              lengthPerPage: 8,
+            },
+          },
+          {
+            // Unique ID of current classification
+            id: "photography",
+            // Decide that the frontmatter keys will be grouped under this classification
+            keys: ["photography"],
+            // Path of the `entry page` (or `list page`)
+            path: "/photography/",
+            // Layout of the `entry page`
+            layout: "Photographys",
+            // layout of the `scope page`
+            scopeLayout: "Photography",
             pagination: {
               lengthPerPage: 8,
             },

@@ -87,6 +87,7 @@ export default {
   methods: {
     getAllBlogs() {
       let pages = this.$site.pages;
+      console.log(pages)
       return pages.filter((item) => {
         const { date } = item.frontmatter;
         return date !== undefined;

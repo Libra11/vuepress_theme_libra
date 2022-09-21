@@ -1,6 +1,6 @@
 module.exports = {
   title: "Libra",
-  base: "/",
+  base: "/vuepress_theme_libra/",
   description: "a vuepress theme by libra",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -30,7 +30,7 @@ module.exports = {
     // 个人信息卡片
     infoCard: {
       // 头像
-      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/%E6%91%84%E5%BD%B1/2022.05.22-1.JPG",
+      headerPic: "https://libra321.oss-cn-huhehaote.aliyuncs.com/img/IMG_0386.JPG",
       // 姓名
       name: "Libra",
       // 邮箱

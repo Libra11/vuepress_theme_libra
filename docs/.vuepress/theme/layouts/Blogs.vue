@@ -1,7 +1,7 @@
 <!--
  * @Author: Libra
  * @Date: 2022-09-21 14:09:54
- * @LastEditTime: 2022-09-21 14:19:08
+ * @LastEditTime: 2022-09-21 19:39:17
  * @LastEditors: Libra
  * @Description: 
  * @FilePath: /vuepress_theme_libra/docs/.vuepress/theme/layouts/Blogs.vue
@@ -160,6 +160,9 @@ export default {
     flex-direction: row;
     max-width: 1284px;
     margin: 0 auto;
+    .header-anchor {
+      display: none;
+    }
     @media (min-width: 992px) {
       padding: 0px 20px;
       margin-top: 30px;
@@ -208,9 +211,6 @@ export default {
       }
       .detail {
         margin-bottom: 80px;
-        a {
-          display: none;
-        }
       }
       .vssue {
         .vssue-header-powered-by {

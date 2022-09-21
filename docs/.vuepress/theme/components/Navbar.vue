@@ -203,6 +203,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: none;
     .menu-item {
       margin: 0px 30px;
     }

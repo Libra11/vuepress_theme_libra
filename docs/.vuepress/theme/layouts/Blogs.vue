@@ -1,3 +1,11 @@
+<!--
+ * @Author: Libra
+ * @Date: 2022-09-21 14:09:54
+ * @LastEditTime: 2022-09-21 14:19:08
+ * @LastEditors: Libra
+ * @Description: 
+ * @FilePath: /vuepress_theme_libra/docs/.vuepress/theme/layouts/Blogs.vue
+-->
 <template>
   <div class="article">
     <my-header></my-header>
@@ -42,18 +50,23 @@
         <div class="detail">
           <div>
             <div v-if="blog.photography">
-                <img v-for="(item, index) in blog.photographyList" :key="index" :src="item" alt="">
+              <img
+                v-for="(item, index) in blog.photographyList"
+                :key="index"
+                :src="item"
+                alt=""
+              />
             </div>
             <Content v-else />
           </div>
         </div>
-        <Comment v-if="$themeConfig.comment.showComment"/>
+        <Comment v-if="$themeConfig.comment.showComment" />
       </div>
       <div class="right">
         <category-card />
         <info-card />
         <div class="list">
-           <TOC/>
+          <TOC />
         </div>
       </div>
     </div>
@@ -66,7 +79,7 @@ import CategoryCard from "@theme/components/CategoryCard";
 import InfoCard from "@theme/components/InfoCard";
 import MyHeader from "@theme/components/Navbar";
 import MyFooter from "@theme/components/Footer";
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import { Comment } from "@vuepress/plugin-blog/lib/client/components";
 import "prismjs/themes/prism-tomorrow.css";
 
 export default {
@@ -75,7 +88,7 @@ export default {
     return {
       hs: [],
       blog: {},
-      photographyList: []
+      photographyList: [],
     };
   },
   mounted() {
@@ -94,33 +107,33 @@ export default {
     fixedTop() {
       var obj = document.querySelector(".list");
       var ot = obj.offsetTop;
-      document.onscroll = function () {
+      document.onscroll = function() {
         var st = document.body.scrollTop || document.documentElement.scrollTop;
         obj.setAttribute("data-fixed", st >= ot + 20 ? "fixed" : "");
       };
     },
     refresh() {
-      this.getBlogs()
+      this.getBlogs();
     },
     getBlogs() {
       if (this.$frontmatter.photography) {
-        this.blog = this.$frontmatter
-        console.log(this.blog)
-        this.photographyList = this.$frontmatter.photographyList
+        this.blog = this.$frontmatter;
+        console.log(this.blog);
+        this.photographyList = this.$frontmatter.photographyList;
       } else {
-        this.blog = this.$frontmatter
+        this.blog = this.$frontmatter;
       }
     },
   },
   created() {
-    this.getBlogs()
+    this.getBlogs();
   },
   components: {
     InfoCard,
     CategoryCard,
     MyHeader,
     MyFooter,
-    Comment
+    Comment,
   },
 };
 </script>
@@ -195,76 +208,76 @@ export default {
       }
       .detail {
         margin-bottom: 80px;
-        a{
-          display:none;
-        }
-      }
-      .vssue{
-        .vssue-header-powered-by{
+        a {
           display: none;
         }
-        .vssue-new-comment{
-          .vssue-comment-avatar {
-          border-radius: 50%;
-          border: 2px solid @whiteColor;
-            transition: all 0.5s;
-          overflow: hidden;
-          .vssue-icon{
-                  font-size: 46px;
-                }
+      }
+      .vssue {
+        .vssue-header-powered-by {
+          display: none;
         }
+        .vssue-new-comment {
+          .vssue-comment-avatar {
+            border-radius: 50%;
+            border: 2px solid @whiteColor;
+            transition: all 0.5s;
+            overflow: hidden;
+            .vssue-icon {
+              font-size: 46px;
+            }
           }
-          .vssue-comments{
-            .vssue-pagination{
-              .vssue-pagination-per-page{
-                .vssue-pagination-select{
-                  color: #3eaf7c;
-                  border:none;
-                  background-image: none;
-                  appearance:button;
-                  padding-right: 0;
-                  &:focus{
+        }
+        .vssue-comments {
+          .vssue-pagination {
+            .vssue-pagination-per-page {
+              .vssue-pagination-select {
+                color: #3eaf7c;
+                border: none;
+                background-image: none;
+                appearance: button;
+                padding-right: 0;
+                &:focus {
+                  background-color: transparent;
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+          .vssue-comment {
+            .vssue-comment-avatar {
+              border-radius: 50%;
+              overflow: hidden;
+              border: 2px solid @whiteColor;
+            }
+            .vssue-comment-body {
+              background-color: @backgroundColor6;
+              box-shadow: 0 2px 10px 0 @blackColor;
+              border-radius: 5px;
+              .vssue-comment-header {
+                border: none;
+              }
+              .vssue-comment-main {
+                border: none;
+                padding-top: 0;
+                padding-bottom: 0;
+                .vssue-edit-comment-input {
+                  color: @whiteColor;
+                }
+                .markdown-body {
+                  color: @whiteColor;
+                  blockquote::before {
                     background-color: transparent;
-                    box-shadow: none;
                   }
                 }
               }
-            }
-            .vssue-comment{
-              .vssue-comment-avatar{
-                border-radius: 50%;
-                overflow: hidden;
-                border: 2px solid @whiteColor;
-              }
-              .vssue-comment-body{
-                background-color: @backgroundColor6;
-            box-shadow: 0 2px 10px 0 @blackColor;
-            border-radius: 5px;
-                .vssue-comment-header{
-                  border: none;
-                }
-                .vssue-comment-main{
-                  border: none;
-                  padding-top: 0;
-                  padding-bottom: 0;
-                  .vssue-edit-comment-input{
-                    color: @whiteColor;
-                  }
-                  .markdown-body{
-                    color: @whiteColor;
-                    blockquote::before{
-                      background-color: transparent;
-                    }
-                  }
-                }
-                .vssue-comment-footer{
-                  border: none;
-                }
+              .vssue-comment-footer {
+                border: none;
               }
             }
           }
+        }
         .vssue-new-comment-body {
-          .vssue-new-comment-input{
+          .vssue-new-comment-input {
             border: none;
             color: @whiteColor;
             background-color: @backgroundColor6;
@@ -272,8 +285,8 @@ export default {
           }
         }
         .vssue-new-comment-footer {
-          .vssue-new-comment-operations{
-            .vssue-button{
+          .vssue-new-comment-operations {
+            .vssue-button {
               // padding: 0;
               border: 1px solid @whiteColor;
               font-size: 12px;
@@ -298,20 +311,20 @@ export default {
         max-height: 600px;
         margin-top: 60px;
         border-radius: 0 0 20px 20px;
-        overflow-y: scroll;
+        overflow: auto;
         box-shadow: 0 2px 12px 0 @blackColor;
         ul {
           padding-left: 10px;
         }
         li {
-          list-style:disc;
+          list-style: disc;
           a {
-          transition: 0.5s all;
-          display: block;
-          padding: 2px 0;
-          &:hover {
-            font-size: 1.5rem;
-          }
+            transition: 0.5s all;
+            display: block;
+            padding: 2px 0;
+            &:hover {
+              font-size: 1.5rem;
+            }
             code {
               color: @whiteColor;
             }

@@ -1,10 +1,18 @@
 #!/usr/bin/env sh
+###
+ # @Author: Libra
+ # @Date: 2022-08-05 10:41:21
+ # @LastEditTime: 2022-09-21 14:10:17
+ # @LastEditors: Libra
+ # @Description: 
+ # @FilePath: /vuepress_theme_libra/deploy.sh
+### 
 
 # 确保脚本抛出遇到的错误
 set -e
 
 # 生成静态文件
-yarn build
+vuepress build docs
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
@@ -22,6 +30,5 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # 当然你也可以不选择gh-pages分支，选择主分支和任意分支都可以
-git push -f git@github.com:Libra11/vuepress-theme-libra.git master:gh-pages
-
+git push -f git@github.com:Libra11/vuepress_theme_libra.git master:gh-pages
 cd -

@@ -1,7 +1,7 @@
 <!--
  * @Author: Libra
  * @Date: 2022-09-21 14:09:54
- * @LastEditTime: 2022-09-21 19:39:17
+ * @LastEditTime: 2022-09-29 17:27:09
  * @LastEditors: Libra
  * @Description: 
  * @FilePath: /vuepress_theme_libra/docs/.vuepress/theme/layouts/Blogs.vue
@@ -118,7 +118,6 @@ export default {
     getBlogs() {
       if (this.$frontmatter.photography) {
         this.blog = this.$frontmatter;
-        console.log(this.blog);
         this.photographyList = this.$frontmatter.photographyList;
       } else {
         this.blog = this.$frontmatter;
@@ -202,6 +201,7 @@ export default {
         color: @textColor;
         font-style: italic;
         font-size: 1rem;
+        list-style: none;
         li {
           padding: 0 10px 0 0;
         }

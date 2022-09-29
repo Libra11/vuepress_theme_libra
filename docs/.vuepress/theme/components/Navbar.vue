@@ -365,6 +365,7 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    list-style: none;
     .nav-menu-item {
       padding: 15px 0px;
       i {

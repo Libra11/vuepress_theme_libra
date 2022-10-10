@@ -25,7 +25,7 @@ module.exports = {
     // 页脚
     footer: {
       // 版权信息
-      copyright: "Copyright © 2019-2020 Libra | 版权所有",
+      copyright: "Copyright © 2019-2022 Libra | 版权所有",
     },
     // 个人信息卡片
     infoCard: {

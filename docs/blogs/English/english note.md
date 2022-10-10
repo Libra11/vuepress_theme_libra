@@ -22,8 +22,30 @@ date: "2022-10-08"
   - because they're <font color="#ff9900">essential</font> for understanding the meaning of this short clip.
 - <font color="#ff9900">emphasize</font>: 强调
   - But instead, I decided to <font color="#ff9900">emphasize</font> what I was saying.
+- <font color="#ff9900">gigantic</font>: adj. 巨大的，庞大的
+- <font color="#ff9900">phrases</font>: n. 短语，词组；惯用语
+  - I created a `gigantic` free PDF worksheet using all of the vocabulary, phrases, questions, sample sentences.
+- <font color="#ff9900">toss</font>: v. （轻轻地或随意地）扔，抛，掷；
+  - You can imagine `tossing` a ball back and forth
+- `Brunch`: breakfast + lunch = brunch; n. 早午餐
+- `spot`: n. 地点，场所；
+  - My friends and I are meeting at our favorite `brunch` `spot` on Saturday.
+- `restaurant`: n. 餐馆，饭店
+- `alcoholic`: adj. 酒精的，含酒精的；酒精中毒的，酗酒的；喝酒引起的，由酒精引起的
+- `champagne`: n. 香槟酒；香槟色
+  - It's a `restaurant` where you can eat breakfast type foods usually with some `alcoholic` drink like a `champagne` or something with fruit in it.
+- `involve`: v. 牵涉，涉及；包含，需要
+  - They're always doing things, usually `involving` lots of other people.
+- `intimate`: adj. 亲密的；个人的，隐私的；温馨的，幽静舒适的；详尽的，精通的；密切的，紧密的；有性关系的，暧昧的
+  - I prefer these kind of `intimate` group settings instead of lots of people.
+- `bonfire`: n. 篝火；营火
+- `roast`: v. 炙，烘（食物，尤指肉）；
+- `marshmallows`: n. 棉花软糖;
+  - Maybe having `abonfire` outside, `roasting` some food or some `marshmallows`.
+- `episode`: 集
+  - when you watch many `episodes` of a TV show or movie for hours without stopping.
 
-## 短句
+## 短句或短语
 
 - I'm so glad that you're <font color="#ff9900">taking time out of your day</font> to improve your English.
   - 从你的一天中抽出时间
@@ -40,6 +62,17 @@ date: "2022-10-08"
   - be + adj. 表示要..... 变......
 - <font color="#ff9900">All of a sudden</font>.
   - 突然之间
+- What are you `up to` this weekend?
+  - 这个周末你有什么安排?
+- You can imagine tossing a ball `back and forth`
+  - 来来回回
+- `Social Butterfly`: 交际花
+  - My friend is a `social butterfly`--she has invitations to 3 brunches and 2 afternoon teas this weekend!
+- `Stay in`: 呆在家里；不外出
+- `Binge-watch`: vt. 煲剧，刷剧
+  - Last weekend my husband and I `stayed in` and `binge-watched` the Star Wars movies.
+- `Catch up on some chores`: to do some cleaning that you didn’t do during the week
+  I was so busy all week, and finally this weekend I can `catch up on some chores` around the house.
 
 ## 对话
 

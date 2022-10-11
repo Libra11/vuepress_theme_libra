@@ -18,12 +18,12 @@ date: "2022-10-08"
   - you probably felt a lttle bit <font color="#ff9900">overwhelmed</font> or <font color="#ff9900">frustrated</font> because there's a lot of <font color="#ff9900">vocabulary</font>, a lot of expressions, and a lot of <font color="#ff9900">reductions</font> in pronunciation.
 - <font color="#ff9900">majority</font>:n.大多数 adj.多数的
   - I can't understand the <font color="#ff9900">majority</font> of what they' re saying.
-- <font color="#ff9900">essential</font>: adj. 至关重要的，必不可少的
+- <font color="#ff9900">essential</font>: adj. 至关重要的，必不可少的 `|ɪˈsɛnʃəl|`
   - because they're <font color="#ff9900">essential</font> for understanding the meaning of this short clip.
-- <font color="#ff9900">emphasize</font>: 强调
+- <font color="#ff9900">emphasize</font>: 强调 `|ˈɛmfəˌsaɪz|`
   - But instead, I decided to <font color="#ff9900">emphasize</font> what I was saying.
-- <font color="#ff9900">gigantic</font>: adj. 巨大的，庞大的
-- <font color="#ff9900">phrases</font>: n. 短语，词组；惯用语
+- <font color="#ff9900">gigantic</font>: adj. 巨大的，庞大的 `|ʤaɪˈgæntɪk|`
+- <font color="#ff9900">phrase</font>: n. 短语，词组；惯用语 `|freɪz|`
   - I created a `gigantic` free PDF worksheet using all of the vocabulary, phrases, questions, sample sentences.
 - <font color="#ff9900">toss</font>: v. （轻轻地或随意地）扔，抛，掷；
   - You can imagine `tossing` a ball back and forth
@@ -31,8 +31,8 @@ date: "2022-10-08"
 - `spot`: n. 地点，场所；
   - My friends and I are meeting at our favorite `brunch` `spot` on Saturday.
 - `restaurant`: n. 餐馆，饭店
-- `alcoholic`: adj. 酒精的，含酒精的；酒精中毒的，酗酒的；喝酒引起的，由酒精引起的
-- `champagne`: n. 香槟酒；香槟色
+- `alcoholic`: adj. 酒精的，含酒精的；酒精中毒的，酗酒的；喝酒引起的，由酒精引起的 `|ˌælkəˈhɑlɪk|`
+- `champagne`: n. 香槟酒；香槟色 `|ʃæmˈpeɪn|`
   - It's a `restaurant` where you can eat breakfast type foods usually with some `alcoholic` drink like a `champagne` or something with fruit in it.
 - `involve`: v. 牵涉，涉及；包含，需要
   - They're always doing things, usually `involving` lots of other people.
@@ -40,10 +40,14 @@ date: "2022-10-08"
   - I prefer these kind of `intimate` group settings instead of lots of people.
 - `bonfire`: n. 篝火；营火
 - `roast`: v. 炙，烘（食物，尤指肉）；
-- `marshmallows`: n. 棉花软糖;
-  - Maybe having `abonfire` outside, `roasting` some food or some `marshmallows`.
-- `episode`: 集
+- `marshmallow`: n. 棉花软糖;
+  - Maybe having a `bonfire` outside, `roasting` some food or some `marshmallows`.
+- `episode`: 集 `|ˈɛpɪsəʊd|`
   - when you watch many `episodes` of a TV show or movie for hours without stopping.
+- `pandemic`: n. <正式>大流行病
+  - since the `pandemic` began, a lot of restaurants have changed their service model.
+- `patio`:n. 露台；天井
+  - Let's go to Louis and eat lunch on their `patio`.
 
 ## 短句或短语
 
@@ -72,7 +76,17 @@ date: "2022-10-08"
 - `Binge-watch`: vt. 煲剧，刷剧
   - Last weekend my husband and I `stayed in` and `binge-watched` the Star Wars movies.
 - `Catch up on some chores`: to do some cleaning that you didn’t do during the week
-  I was so busy all week, and finally this weekend I can `catch up on some chores` around the house.
+  - I was so busy all week, and finally this weekend I can `catch up on some chores` around the house.
+- `eat out`: 出外吃饭
+  - Do you want to eat out?
+- Should we order `pick up/carry-out/take-out/take-away`?
+  - 我可以点外卖吗？
+- What are you `in the mood for`?
+  - 你想吃什么
+- Let's `order in`.
+  - It means that the speaker wants to order food for delivery to their home rather than go out for food.
+- Let's `grap a bite` at Ted's Cafe.
+  - 表示吃东西，通常是很快的一餐，例如午餐，不像晚餐那么慢。
 
 ## 对话
 

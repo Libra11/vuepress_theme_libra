@@ -48,6 +48,15 @@ date: "2022-10-08"
   - since the `pandemic` began, a lot of restaurants have changed their service model.
 - `patio`:n. 露台；天井
   - Let's go to Louis and eat lunch on their `patio`.
+- `vacation`: n. （学校的）假期，（法院的）休庭期；<美>休假，假期；腾出，辞去
+  - In this lesson, we're going to talk about some common questions to ask about `vacations`.
+- `realistic`: adj. 务实的，实事求是的；实际的，现实可行的；写实的，逼真的；实在论的
+  - Let's talk about some `realistic` answers.
+- `reunion`: n. （有组织的）聚会，团聚；重逢，团圆；再联合，重新统一
+- `postpone`: v. 推迟，延缓；把……放在次要地位；把……放在后面
+- `cruise`: n. 巡游，乘船游览
+  - I'd like to go to a family `reunion`, but we're had to `postpone` it.
+  - I wish that I could go on a `cruise`, but that's not happening right now.
 
 ## 短句或短语
 
@@ -87,6 +96,11 @@ date: "2022-10-08"
   - It means that the speaker wants to order food for delivery to their home rather than go out for food.
 - Let's `grap a bite` at Ted's Cafe.
   - 表示吃东西，通常是很快的一餐，例如午餐，不像晚餐那么慢。
+- Where are you `headed for` vacation?
+  - 前往、出发
+  - head: v. 朝某特定方向行进；
+- `lock inside your memery`
+  - 锁在你的记忆里,记住
 
 ## 对话
 

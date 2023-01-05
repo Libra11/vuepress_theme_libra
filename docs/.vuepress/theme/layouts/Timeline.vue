@@ -43,7 +43,7 @@
                   <div class="timeline-container">
                     <div class="card-left"></div>
                     <div class="card-right">
-                      <div class="title">{{ item.frontmatter.title }}</div>
+                        <div class="title">{{ item.frontmatter.title }}</div>
                       <div class="desc">{{ item.frontmatter.desc }}</div>
                       <div class="date">
                         <i class="iconfont iconshizhong"></i>
@@ -172,6 +172,7 @@ export default {
           }
           .card-right {
             width: 100%;
+            padding: 10px;
             .title {
               font-size: 18px;
             }
@@ -179,7 +180,6 @@ export default {
               font-weight: 100;
               margin-top: 10px;
               font-size: 14px;
-              padding-left: 20px;
               font-style: italic;
             }
             .date {
@@ -220,7 +220,6 @@ export default {
         background-color: @backgroundColor6;
         box-shadow: 2px 2px 5px 0 @blackColor;
         overflow: hidden;
-        padding: 20px 10px;
       }
       .timeline-article p {
         padding: 0;
@@ -307,7 +306,6 @@ export default {
         .timeline-article .content-left,
         .timeline-article .content-right {
           width: 93%;
-          padding: 10px 25px;
           min-height: 65px;
         }
         .timeline-article .content-left:before {

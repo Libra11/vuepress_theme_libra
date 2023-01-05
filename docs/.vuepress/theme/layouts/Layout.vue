@@ -68,6 +68,7 @@ export default {
     justify-content: center;
     font-weight: 100;
     margin-left: 10%;
+    overflow:hidden;
     .contact {
       position: relative;
       margin-top: 40px;

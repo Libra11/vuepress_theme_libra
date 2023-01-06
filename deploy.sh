@@ -2,7 +2,7 @@
 ###
  # @Author: Libra
  # @Date: 2022-08-05 10:41:21
- # @LastEditTime: 2022-09-21 14:10:17
+ # @LastEditTime: 2023-01-05 19:48:40
  # @LastEditors: Libra
  # @Description: 
  # @FilePath: /vuepress_theme_libra/deploy.sh
@@ -21,6 +21,7 @@ cd docs/.vuepress/dist
 # echo 'www.example.com' > CNAME
 
 git init
+git checkout -b master
 git add -A
 git commit -m 'deploy'
 

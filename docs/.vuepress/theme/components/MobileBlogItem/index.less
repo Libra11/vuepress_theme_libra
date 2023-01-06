@@ -36,12 +36,17 @@
     .title {
       display: inline-block;
       width: 100%;
-      text-overflow: ellipsis;
       line-height: 20px;
       max-height: 100px;
       color: @whiteColor;
       font-size: 1.3rem;
+      // 最多显示两行，多余的使用省略号
+      text-overflow: ellipsis;
+      display: -webkit-box;
       overflow: hidden;
+      word-break: break-all;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
     }
     .content {
       display: inline-block;

@@ -201,16 +201,11 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // margin: 0 auto;
         .blog-container {
           display: flex;
-          // justify-content: center;
           align-items: center;
           flex-wrap: wrap;
           min-width: 904px;
-          div {
-            margin-right: 20px;
-          }
         }
         .tags-title {
           display: inline-block;

@@ -206,9 +206,9 @@ export default {
           align-items: center;
           flex-wrap: wrap;
           min-width: 904px;
-          div {
-            margin-right: 20px;
-          }
+          // div {
+          //   margin-right: 20px;
+          // }
         }
         .tags-title {
           display: inline-block;

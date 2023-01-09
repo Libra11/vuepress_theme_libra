@@ -14,6 +14,7 @@ date: "2023-01-06"
 
 ```javascript
 console.log(typeof 2); // number
+console.log(typeof NaN); // number
 console.log(typeof true); // boolean
 console.log(typeof "str"); // string
 console.log(typeof function() {}); // function
@@ -48,7 +49,28 @@ console.log(x instanceof B); // Output: false
 2. 如果左操作数不是对象，则返回 `false`。
 3. 检测函数的 `prototype` 属性是否出现在对象的原型链中。如果出现，则返回 `true`；否则返回 `false`。
 
-例如：
+下面是自定义 `instanceof` 操作符的示例实现：
+
+```javascript
+function myInstanceof(left, right) {
+  if (typeof right !== "function") {
+    throw new TypeError("Right-hand side of 'instanceof' is not callable");
+  }
+  if (typeof left !== "object") {
+    return false;
+  }
+  let current = left;
+  while (current !== null) {
+    if (current.constructor === right) {
+      return true;
+    }
+    current = Object.getPrototypeOf(current);
+  }
+  return false;
+}
+```
+
+使用实例：
 
 ```javascript
 function A() {}

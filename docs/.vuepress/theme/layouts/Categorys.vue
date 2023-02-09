@@ -94,7 +94,6 @@ export default {
       });
     },
     changePage(n) {
-      console.log(n)
       this.Blogs = sortBlog(this.getAllBlogs()).slice((n - 1) * 8, 8 * n);
     },
   },

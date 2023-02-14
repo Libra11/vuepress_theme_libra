@@ -178,6 +178,8 @@ export default {
           position: relative;
           border-radius: 0 0 20px 20px;
           box-shadow: 0 2px 12px 0 @blackColor;
+          max-height: 600px;
+          object-fit: cover;
           @media (max-width: 992px) {
             border-radius: 5px;
             overflow: hidden;

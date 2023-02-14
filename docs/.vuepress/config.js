@@ -12,7 +12,10 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["vuepress-plugin-table-of-contents", "@vuepress/back-to-top"],
+  plugins: [
+    "vuepress-plugin-table-of-contents", 
+    "@vuepress/back-to-top"
+  ],
   // theme:
   themeConfig: {
     // Logo

@@ -4,7 +4,7 @@ category: javascript
 desc: Javascript数组详解
 tag:
   - javascript
-picture: https://libra321.oss-cn-huhehaote.aliyuncs.com/img/Closure.png
+picture: https://libra321.oss-cn-huhehaote.aliyuncs.com/img/arrayde.png
 date: "2023-02-09"
 ---
 
@@ -967,4 +967,206 @@ let entries = letter.entries();
 console.log(entries.next().value); // [0, 'a']
 console.log(entries.next().value); // [1, 'b']
 console.log(entries.next().value); // [2, 'c']
+```
+
+## `Javascript`数组方法实践
+
+### 数组扁平化
+
+1. 递归：通过递归的方式不断的把数组内嵌的数组打开，并把所有的元素放到一个新数组中。
+
+```javascript
+function flattenArray(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      result = result.concat(flattenArray(arr[i]));
+    } else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+```
+
+2. 使用 `reduce()` 和 `concat()`：通过 `reduce()` 方法把所有数组元素合并成一个数组，`concat()` 方法用于把多个数组合并成一个数组。
+
+```javascript
+function flattenArray(arr) {
+  return arr.reduce(
+    (acc, val) => acc.concat(Array.isArray(val) ? flattenArray(val) : val),
+    []
+  );
+}
+```
+
+3. 使用 `spread` 运算符：`ES6` 中引入了 `spread` 运算符，可以用于把数组扁平化。
+
+```javascript
+function flattenArray(arr) {
+  return [].concat(
+    ...arr.map((val) => (Array.isArray(val) ? flattenArray(val) : val))
+  );
+}
+```
+
+4. 利用 `toString` 把数组变成以逗号分隔的字符串，然后遍历数组把每一项再变回原来的类型。
+
+```javascript
+const flatten = (arr) =>
+  arr
+    .toString()
+    .split(",")
+    .map((item) => +item);
+
+const arr = [1, [2, [3, 4]]];
+console.log(flatten(arr));
+```
+
+### 生成类似[1-100]这样的的数组：
+
+测试大量数据的数组时可以这样生成：
+
+```javascript
+// fill
+const arr = new Array(100).fill(0).map((item, index) => index + 1);
+
+// Array.from()
+const arr = Array.from(Array(100), (v, k) => k + 1);
+
+// ... + array.keys()
+const ary = [...Array(100).keys()];
+```
+
+`new Array(100)` 会生成一个有 100 空位的数组，这个数组是不能被`map()，forEach(), filter(), reduce(), every() ，some()`遍历的，因为空位会被跳过（`for of`不会跳过空位，可以遍历）。 `[...new Array(4)]` 可以给空位设置默认值`undefined`，从而使数组可以被以上方法遍历。
+
+### 数组解构赋值应用
+
+```javascript
+// 交换变量
+[a, b] = [b, a][(o.a, o.b)] = [o.b, o.a];
+// 生成剩余数组
+const [a, ...rest] = [..."asdf"]; // a: 'a'，rest: ["s", "d", "f"]
+```
+
+### 数组浅拷贝
+
+```javascript
+const arr = [1, 2, 3];
+const arrClone = [...arr];
+// 对象也可以这样浅拷贝
+const obj = { a: 1 };
+const objClone = { ...obj };
+```
+
+浅拷贝方法有很多如`arr.slice(0, arr.length)/Arror.from(arr)`等，但是用了`...`操作符之后就不会再想用其他的了~
+
+### 数组合并
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [7, 8, 9];
+const arr = [...arr1, ...arr2, ...arr3];
+```
+
+`arr1.concat(arr2, arr3)`同样可以实现合并，但是用了`...`操作符之后就不会再想用其他的了~
+
+### 数组去重
+
+```javascript
+const arr = [1, 1, 2, 2, 3, 4, 5, 5];
+const newArr = [...new Set(arr)];
+```
+
+`new Set(arr)`接受一个数组参数并生成一个 set 结构的数据类型。set 数据类型的元素不会重复且是`Array Iterator`，所以可以利用这个特性来去重。
+
+### 数组取交集
+
+```javascript
+const a = [0, 1, 2, 3, 4, 5];
+const b = [3, 4, 5, 6, 7, 8];
+const duplicatedValues = [...new Set(a)].filter((item) => b.includes(item));
+duplicatedValues; // [3, 4, 5]
+```
+
+### 数组取差集
+
+```javascript
+const a = [0, 1, 2, 3, 4, 5];
+const b = [3, 4, 5, 6, 7, 8];
+const diffValues = [...new Set([...a, ...b])].filter(
+  (item) => !b.includes(item) || !a.includes(item)
+); // [0, 1, 2, 6, 7, 8]
+```
+
+### 数组转对象
+
+```javascript
+const arr = [1, 2, 3, 4];
+const newObj = { ...arr }; // {0: 1, 1: 2, 2: 3, 3: 4}
+const obj = { 0: 0, 1: 1, 2: 2, length: 3 };
+// 对象转数组不能用展开操作符，因为展开操作符必须用在可迭代对象上
+let newArr = [...obj]; // Uncaught TypeError: object is not iterable...
+// 可以使用Array.form()将类数组对象转为数组
+let newArr = Array.from(obj); // [0, 1, 2]
+```
+
+### 数组摊平
+
+```javascript
+const obj = { a: "群主", b: "男群友", c: "女裙友", d: "未知性别" };
+const getName = function(item) {
+  return item.includes("群");
+};
+// 方法1
+const flatArr = Object.values(obj)
+  .flat()
+  .filter((item) => getName(item));
+const flatArr = Object.values(obj)
+  .flat()
+  .filter(getName);
+```
+
+二维数组用`array.flat()`，三维及以上用`array.flatMap()`。`array.flat(2)`可以传参数字如 2，表示要摊平的层数。
+
+### 强大的`reduce`
+
+`array.reduce` 遍历并将当前次回调函数的返回值作为下一次回调函数执行的第一个参数。
+
+利用 `array.reduce` 替代一些需要多次遍历的场景，可以极大提高代码运行效率。
+
+1. 利用`reduce` 输出一个数字/字符串
+
+假如有如下每个元素都由字母's'加数字组成的数组`arr`，现在找出其中最大的数字：（`arr`不为空）
+
+```javascript
+const arr = ["s0", "s4", "s1", "s2", "s8", "s3"];
+
+const maxS = arr.reduce((total, cur) => {
+  const curIndex = Number(cur.replace("s", ""));
+  return curIndex > total ? curIndex : total;
+}, 0);
+```
+
+2. 利用`reduce` 输出一个数组/对象
+
+```javascript
+const arr = [1, 2, 3, 4, 5];
+
+const value = arr.reduce((total, curr) => {
+  return curr % 2 === 0 ? [...total, { value: curr }] : total;
+}, []);
+```
+
+掌握了上面两种用法，结合实际需要，就可以用 `reduce/reduceRight` 实现各种奇巧淫技了。
+
+3. 不改变原数组的`reverse`
+
+由于 `array.reverse()` 函数会改变原数组自身，这样就限制了一些使用场景。如果我想要一个不会改变数组自身的 `reverse` 函数呢？
+
+```javascript
+const myReverse = (arr = []) => {
+  return arr.reduceRight((total, cur) => [...total, cur], []); // 也可以返回逗号表达式 (total.push(cur), total)
+};
 ```

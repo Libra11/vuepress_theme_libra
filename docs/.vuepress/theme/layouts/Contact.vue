@@ -1,7 +1,7 @@
 <template>
   <div class="contact-container">
     <my-header></my-header>
-    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
+    <div class="bg" />
     <div class="contact">
       <div class="contact-content">
         <div class="content-header-container">

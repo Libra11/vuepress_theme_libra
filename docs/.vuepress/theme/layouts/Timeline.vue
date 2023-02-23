@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <my-header></my-header>
-    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
+    <div class="bg" />
     <div class="content">
       <div class="left">
         <section id="conference-timeline">

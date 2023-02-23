@@ -2,7 +2,7 @@
 <template>
   <div class="labels-container">
     <my-header></my-header>
-    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
+    <div class="bg" />
     <div class="label-content">
       <div class="left">
         <div class="mobile-classify-label">
@@ -123,7 +123,7 @@ export default {
 @import "@theme/common/color.less";
 .labels-container {
   display: flex;
-  min-height: 100vh;
+  min-width: none;height: 100vh;
   flex-direction: column;
   position: relative;
   .bg {

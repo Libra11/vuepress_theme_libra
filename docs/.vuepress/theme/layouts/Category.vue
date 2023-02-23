@@ -2,7 +2,7 @@
 <template>
   <div class="labels-container">
     <my-header></my-header>
-    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
+    <div class="bg" />
     <div class="label-content">
       <div class="left">
         <div class="mobile-classify-label">

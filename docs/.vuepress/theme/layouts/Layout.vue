@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <Navbar />
-    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
+    <div class="bg" />
     <div class="content">
       <span class="content-text header-text animated slow bounceInLeft">{{
         $themeConfig.home.title

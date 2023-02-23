@@ -1,7 +1,7 @@
 <!--
  * @Author: Libra
  * @Date: 2022-09-21 14:09:54
- * @LastEditTime: 2023-02-10 10:44:08
+ * @LastEditTime: 2023-02-23 10:12:57
  * @LastEditors: Libra
  * @Description: 
  * @FilePath: /vuepress_theme_libra/docs/.vuepress/theme/layouts/Blogs.vue
@@ -9,24 +9,7 @@
 <template>
   <div class="article">
     <my-header></my-header>
-    <vue-particles
-      class="bg"
-      color="#fff"
-      :particleOpacity="0.7"
-      :particlesNumber="60"
-      shapeType="circle"
-      :particleSize="4"
-      linesColor="#fff"
-      :linesWidth="1"
-      :lineLinked="true"
-      :lineOpacity="0.4"
-      :linesDistance="150"
-      :moveSpeed="6"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
-    ></vue-particles>
+    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
     <div class="article-content">
       <div class="left">
         <span class="title animated rollIn">{{ blog.title }}</span>
@@ -148,7 +131,7 @@ export default {
     background: left / cover fixed no-repeat url("../assets/background.jpg");
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     z-index: -1;
   }
   .article-content {

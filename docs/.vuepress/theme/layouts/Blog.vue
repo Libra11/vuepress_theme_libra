@@ -2,24 +2,7 @@
 <template>
   <div class="labels-container">
     <my-header></my-header>
-    <vue-particles
-      class="bg"
-      color="#fff"
-      :particleOpacity="0.7"
-      :particlesNumber="60"
-      shapeType="circle"
-      :particleSize="4"
-      linesColor="#fff"
-      :linesWidth="1"
-      :lineLinked="true"
-      :lineOpacity="0.4"
-      :linesDistance="150"
-      :moveSpeed="6"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
-    ></vue-particles>
+    <particles-bg color="#ffffff" type="cobweb" :bg="false" class="bg"/> 
     <div class="label-content">
       <div class="left">
         <div class="mobile-classify-label">
@@ -146,7 +129,7 @@ export default {
   .bg {
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     background: left / cover fixed no-repeat url("../assets/background.jpg");
     z-index: -1;
   }

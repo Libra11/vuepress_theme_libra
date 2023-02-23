@@ -42,6 +42,7 @@ console.log(obj1.b === obj4.b); // Output: true
 
 - `JSON.parse(JSON.stringify(obj))`
 - 递归实现
+- `structuredClone(value, options)` （`Chrome98`之后才支持）
 
 ```javascript
 let obj1 = { a: 1, b: { c: 2 } };
@@ -134,4 +135,32 @@ let obj2 = deepCopy(obj1);
 
 console.log(obj1 === obj2); // Output: false
 console.log(obj1.b === obj2.b); // Output: false
+```
+
+```javascript
+// javascript structuredClone是一个使用结构化克隆算法创建给定值的深层拷贝的方法。
+// 结构化克隆算法用于复制复杂JavaScript对象的算法，在调用structuredClone()
+// 通过postMessage()在Worker之间传输数据、使用IndexedDB存储对象或为其他API复制对象时在内部使用。
+
+// structuredClone()方法还允许在原始值中的可转移对象被转移而不是克隆到新对象。
+// 转移的对象从原始对象中分离并附加到新对象；它们在原始对象中不再可访问。
+
+// 下面是一个使用structuredClone()方法的代码示例：
+// 创建一个包含循环引用和可转移对象的复杂对象
+const obj = {
+  a: 1,
+  b: {
+    c: 2,
+    d: new ArrayBuffer(8),
+  },
+};
+obj.b.e = obj; // 添加循环引用
+
+// 使用structuredClone()方法创建一个深层拷贝，并将ArrayBuffer转移
+const clone = structuredClone(obj, { transfer: [obj.b.d] });
+
+// 检查结果
+console.log(clone); // { a: 1, b: { c: 2, d: ArrayBuffer {}, e: [Circular *1] } }
+console.log(obj.b.d); // undefined
+console.log(clone.b.d); // ArrayBuffer {}
 ```

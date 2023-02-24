@@ -123,13 +123,13 @@ export default {
 @import "@theme/common/color.less";
 .labels-container {
   display: flex;
-  min-width: none;height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   position: relative;
   .bg {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background: left / cover fixed no-repeat url("../assets/background.jpg");
     z-index: -1;
   }

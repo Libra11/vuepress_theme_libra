@@ -1,7 +1,7 @@
 <!--
  * @Author: Libra
  * @Date: 2022-09-21 14:09:54
- * @LastEditTime: 2023-02-23 10:36:49
+ * @LastEditTime: 2023-05-10 14:01:26
  * @LastEditors: Libra
  * @Description: 
  * @FilePath: /vuepress_theme_libra/docs/.vuepress/theme/layouts/Blogs.vue
@@ -305,8 +305,11 @@ export default {
             transition: 0.5s all;
             display: block;
             padding: 2px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             &:hover {
-              font-size: 1.5rem;
+              color: #ff9900; 
             }
             code {
               color: @whiteColor;

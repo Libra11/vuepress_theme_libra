@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>封装axios | Libra</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/vuepress_theme_libra/favicon.ico">
+    <meta name="description" content="a vuepress theme by libra">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/vuepress_theme_libra/assets/css/0.styles.c313087e.css" as="style"><link rel="preload" href="/vuepress_theme_libra/assets/js/app.81b11391.js" as="script"><link rel="preload" href="/vuepress_theme_libra/assets/js/4.45950cb6.js" as="script"><link rel="preload" href="/vuepress_theme_libra/assets/js/44.a4552f11.js" as="script"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/1.2e06a9cb.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/10.60852d63.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/11.ee2a0c5d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/12.190660e2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/13.cb7fb853.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/14.416de39c.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/15.bf9ec89a.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/16.9a8b47a8.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/17.9168572d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/18.461c471f.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/19.d2698337.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/20.f18da4ad.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/21.85704b86.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/22.f43db1ee.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/23.e31ab2b3.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/24.42421b44.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/25.1d55f477.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/26.48cbc0fe.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/27.9847d060.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/28.5e421513.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/29.dfb7b633.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/30.102e1636.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/31.2377072d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/32.63dede4d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/33.88c8d1bd.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/34.a7ab9026.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/35.07369c57.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/36.7b44d369.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/37.05d4c89f.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/38.dd7a2184.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/39.13a5cfc2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/40.2bdd360a.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/41.5e7eb681.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/42.72153d56.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/43.638dd185.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/45.d37a8e32.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/46.5d170fcc.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/47.d3fc8f48.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/48.d4daa220.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/49.180a1c96.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/5.76e49f54.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/50.5a96e7ed.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/51.c5d15611.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/52.c465ffcb.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/53.b7aca8de.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/54.1fe87c94.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/55.8e787bf0.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/56.21c25c0d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/6.4bcad778.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/7.625d576e.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/8.2b069256.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/9.dc3026f2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/vuejs-paginate.710197ce.js">
+    <link rel="stylesheet" href="/vuepress_theme_libra/assets/css/0.styles.c313087e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="article"><nav class="topbar"><span class="logo"><span class="logo-text">L</span></span> <ul class="menu"><li class="menu-item"><a href="/vuepress_theme_libra/" class="link router-link-active">主页</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/blog" class="link">博客</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/photography" class="link">摄影</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/tag" class="link">标签</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/category" class="link">分类</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/timeline" class="link">时间线</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/contact" class="link">联系我</a></li></ul> <div class="search"><i class="iconfont iconsearch"></i> <div class="search-box" data-v-89631566><input aria-label="Search" placeholder="请输入你想要搜索的内容..." autocomplete="off" spellcheck="false" value="" data-v-89631566> <!----></div></div> <span class="mobile-nav"><i class="iconfont iconnav"></i></span> <nav class="mobile-nav-item" style="display:none;"><div class="header-button"><i class="iconfont iconback"></i></div> <div class="header-info"><div class="avatar"><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/IMG_0386.JPG" alt="" class="avatar-img"></div> <span class="name">Libra</span> <i class="mail">libra085925@gmail.com</i> <div class="statistics"><span class="articles">
+            39
+            <i class="white"> 文章</i></span> <span class="verticle-line white">|</span> <span class="link">
+            6
+            <i class="white"> 分类</i></span></div></div> <div class="line"></div> <ul class="nav-menu"><li class="nav-menu-item"><a href="/vuepress_theme_libra/" class="router-link-active"><i class="iconfont iconhome"></i> <i class="white">主页</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/blog"><i class="iconfont iconblog"></i> <i class="white">博客</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/photography"><i class="iconfont iconblog"></i> <i class="white">摄影</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/tag"><i class="iconfont iconlabel"></i> <i class="white">标签</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/category"><i class="iconfont iconfenlei-"></i> <i class="white">分类</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/timeline"><i class="iconfont icontimeline"></i> <i class="white">时间线</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/contact"><i class="iconfont iconother"></i> <i class="white">联系我</i></a></li></ul></nav></nav> <div class="bg"></div> <div class="article-content"><div class="left"><span class="title animated rollIn">封装axios</span> <ul class="label animated zoomInUp"><li class="date"><i class="iconfont iconshizhong"></i>
+          2022-09-21
+        </li> <li class="update"><i class="iconfont iconUpdate"></i>
+          2022-09-21
+        </li> <li class="labels"><i class="iconfont iconlabel"></i>
+          javascript
+        </li></ul> <div class="image"><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eb5e7babc4a342f285a5bb44acd50ac5~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?" alt width="100%"></div> <div class="detail"><div><div class="content__default"><h1 id="前言-为何做"><a href="#前言-为何做" class="header-anchor">#</a> 前言（为何做）</h1> <p>过去的一段时间，我都认为 <strong>接口请求</strong> 封装是前端的必修课。 只要是写过生产环境前端代码的人，应该都脱离不了异步接口请求，那么 接口请求 的 <strong>封装</strong> 是必经之路。</p> <p>直到前些天，我们屋某个美团写后台的小姑娘问我前端问题时。我才发现她们代码中的 <strong>接口请求</strong> ，都是没有任何的封装，直接采用以下方式进行：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/api/xxxx/xxxx?xxx=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>xxx<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span>data <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>errno<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>这样写也不是说不好，在某种程度上，这增加了代码的可读性。
+但是我们大多数页面需要的接口都不止一个，那么我们的组件中极有可能出现 <strong>数十上百</strong> 行重复代码。</p> <p>那么随着请求的体量越来越大，我们的项目便越来越难以维护。</p> <h2 id="效果演示"><a href="#效果演示" class="header-anchor">#</a> 效果演示</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token punctuation">[</span>e<span class="token punctuation">,</span> r<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span>userid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e <span class="token operator">&amp;&amp;</span> r<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>userInfo <span class="token operator">=</span> r<span class="token punctuation">.</span>data<span class="token punctuation">.</span>userinfo<span class="token punctuation">;</span>
+</code></pre></div><p>上面是我们最终的实现效果。</p> <p>接下来，我将带大家一步一步封装一套属于我们自己的 <strong>接口请求工具</strong> ，同时也希望大家分享更好的思路。</p> <h1 id="思路清晰-先说分析-做什么"><a href="#思路清晰-先说分析-做什么" class="header-anchor">#</a> 思路清晰，先说分析（做什么）</h1> <p>在我们正式开发前，首先需要清楚请求一个接口都做了什么。</p> <p>为此，消耗了两个小时时间，做了一个请求流程图，以便于我们后续进行需求分析</p> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/38a6dc88edd149c6ab5e9c08b15a3416~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?" alt="img"></p> <p>有了一个清晰的请求流程图，我们便可以区分出来两块重要的内容来进行拆分： <strong>基础请求流程</strong> 、 <strong>拦截器</strong> 。</p> <p>接下来我们将两块儿内容展开讲。</p> <h2 id="基础请求流程"><a href="#基础请求流程" class="header-anchor">#</a> 基础请求流程</h2> <p>基础请求流程，我们大致可以分为三块， 一是 <strong>请求进入请求拦截前</strong> 、二是 <strong>真正发起的请求</strong> 、三是 <strong>请求从响应拦截出来后</strong> 。</p> <p>这其中可以归为两类，
+一类是 <strong>针对单独接口的处理</strong>
+二类是 <strong>针对所有接口需要的内容</strong></p> <ul><li>针对单独接口的处理
+<ul><li>请求前的参数处理</li> <li>请求后的返回值处理</li></ul></li> <li>针对所有接口的处理
+<ul><li><code>Post</code></li> <li><code>Get</code></li> <li><code>Put</code></li> <li><code>Del</code></li></ul></li></ul> <h2 id="拦截器"><a href="#拦截器" class="header-anchor">#</a> 拦截器</h2> <p>拦截器，我们大致可以分为两类， 一类是 <strong>请求接口前的统一处理（请求拦截）</strong> 、 一类是 <strong>请求接口后的统一处理（响应拦截）</strong></p> <ul><li>请求拦截
+<ul><li>请求调整</li> <li>用户标识</li></ul></li> <li>响应拦截
+<ul><li>网络错误处理</li> <li>授权错误处理</li> <li>普通错误处理</li> <li>代码异常处理</li></ul></li></ul> <h2 id="统一调用"><a href="#统一调用" class="header-anchor">#</a> 统一调用</h2> <p>随着我们的 <code>Api</code> 越来越多，我们可能需要给他们不同的分类，但我们并不希望每次调用都从不同的文件夹引入不同的 <code>Api</code> ，因此在 基础请求 + 拦截器 之外，我们还需要一个封包操作。</p> <h2 id="开发顺序"><a href="#开发顺序" class="header-anchor">#</a> 开发顺序</h2> <p>随着我们要做的内容越来越多，我们希望它有一个顺序以便于我们按部就班的开发（相信大家对开发中出现的不确定性都深恶痛绝）。
+以便于我们按照流程，无意外、无惊喜 的完成此次封装。</p> <p>在我们的开发中，我们基本要遵循先处理通用内容在处理个性化内容的逻辑：</p> <ol><li>针对所有接口的处理（<code>Get</code>）</li> <li>请求拦截</li> <li>响应拦截</li> <li>针对单独接口的处理</li> <li>封包处理</li> <li>针对所有接口的处理（<code>Post</code>、<code>Put</code>、<code>Del</code>）</li></ol> <h1 id="万事俱备、只欠东风-怎么做"><a href="#万事俱备、只欠东风-怎么做" class="header-anchor">#</a> 万事俱备、只欠东风（怎么做）</h1> <p>按照我们之前定好的顺序，按部就班的开发 ⑧！</p> <h2 id="针对所有接口的处理-get"><a href="#针对所有接口的处理-get" class="header-anchor">#</a> 针对所有接口的处理（<code>Get</code>）</h2> <p>我们希望以 <code>const [e, r] = await api.getUserInfo(id)</code> 的方式调用，代表着我们需要保证返回值稳定的返回 <code>[err, result]</code> ，所以我们需要在请求无论成功失败时，都以 <code>resolve</code> 方式调用。</p> <p>同时，我们希望我们可以处理返回值，因此在这里封装了 <code>clearFn</code> 的回调函数。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">Fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>data<span class="token operator">:</span> FcResponse<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IAnyObj</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>index<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token punctuation">{</span>
+  errno<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  errmsg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  data<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> get <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  params<span class="token operator">:</span> IAnyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  clearFn<span class="token operator">?</span><span class="token operator">:</span> Fn
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token builtin">any</span><span class="token punctuation">,</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token operator">=&gt;</span>
+  <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> res<span class="token operator">:</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>clearFn <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          res <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">clearFn</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span> <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          res <span class="token operator">=</span> result<span class="token punctuation">.</span>data <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> res <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span>err<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="请求拦截"><a href="#请求拦截" class="header-anchor">#</a> 请求拦截</h2> <p>请求拦截中，我们需要两块内容，一是 <strong>请求的调整</strong> ，二是 <strong>配置用户标识</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">handleRequestHeader</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  config<span class="token punctuation">[</span><span class="token string">&quot;xxxx&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleAuth</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  config<span class="token punctuation">.</span>header<span class="token punctuation">[</span><span class="token string">&quot;token&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">&quot;token&quot;</span><span class="token punctuation">)</span> <span class="token operator">||</span> token <span class="token operator">||</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  config <span class="token operator">=</span> <span class="token function">handleChangeRequestHeader</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  config <span class="token operator">=</span> <span class="token function">handleConfigureAuth</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="响应拦截"><a href="#响应拦截" class="header-anchor">#</a> 响应拦截</h2> <p>响应错误由三类错误组成：</p> <ul><li>网络错误处理</li> <li>授权错误处理</li> <li>普通错误处理</li></ul> <p>因此，要优雅的处理响应拦截，我们必须先将三类错误函数写好，以便于我们增强代码扩展性及后期维护。</p> <h3 id="错误处理函数"><a href="#错误处理函数" class="header-anchor">#</a> 错误处理函数</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">handleNetworkError</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">errStatus</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> errMessage <span class="token operator">=</span> <span class="token string">&quot;未知错误&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>errStatus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>errStatus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token number">400</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;错误的请求&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">401</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;未授权，请重新登录&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">403</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;拒绝访问&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">404</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;请求错误,未找到该资源&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">405</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;请求方法未允许&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">408</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;请求超时&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">500</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;服务器端出错&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">501</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;网络未实现&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">502</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;网络错误&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">503</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;服务不可用&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">504</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;网络超时&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token number">505</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token string">&quot;http版本不支持该请求&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        errMessage <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">其他连接错误 --</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>errStatus<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    errMessage <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">无法连接到服务器！</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleAuthError</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">errno</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token literal-property property">authErrMap</span><span class="token operator">:</span> any <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;10031&quot;</span><span class="token operator">:</span> <span class="token string">&quot;登录失效，需要重新登录&quot;</span><span class="token punctuation">,</span> <span class="token comment">// token 失效</span>
+    <span class="token string-property property">&quot;10032&quot;</span><span class="token operator">:</span> <span class="token string">&quot;您太久没登录，请重新登录~&quot;</span><span class="token punctuation">,</span> <span class="token comment">// token 过期</span>
+    <span class="token string-property property">&quot;10033&quot;</span><span class="token operator">:</span> <span class="token string">&quot;账户未绑定角色，请联系管理员绑定角色&quot;</span><span class="token punctuation">,</span>
+    <span class="token string-property property">&quot;10034&quot;</span><span class="token operator">:</span> <span class="token string">&quot;该用户未注册，请联系管理员注册用户&quot;</span><span class="token punctuation">,</span>
+    <span class="token string-property property">&quot;10035&quot;</span><span class="token operator">:</span> <span class="token string">&quot;code 无法获取对应第三方平台用户&quot;</span><span class="token punctuation">,</span>
+    <span class="token string-property property">&quot;10036&quot;</span><span class="token operator">:</span> <span class="token string">&quot;该账户未关联员工，请联系管理员做关联&quot;</span><span class="token punctuation">,</span>
+    <span class="token string-property property">&quot;10037&quot;</span><span class="token operator">:</span> <span class="token string">&quot;账号已无效&quot;</span><span class="token punctuation">,</span>
+    <span class="token string-property property">&quot;10038&quot;</span><span class="token operator">:</span> <span class="token string">&quot;账号未找到&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>authErrMap<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>authErrMap<span class="token punctuation">[</span>errno<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 授权错误，登出账户</span>
+    <span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleGeneralError</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">errno<span class="token punctuation">,</span> errmsg</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>errno <span class="token operator">!==</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    meessage<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="适配"><a href="#适配" class="header-anchor">#</a> 适配</h3> <p>当我们将所有的错误类型处理函数写完，在 <code>axios</code> 的拦截器中进行调用即可。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">handleAuthError</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">handleGeneralError</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errno<span class="token punctuation">,</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">handleNetworkError</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="针对单独接口的处理"><a href="#针对单独接口的处理" class="header-anchor">#</a> 针对单独接口的处理</h2> <p>基于上面的几类通用处理，我们这个请求的封装基本已经可用了。</p> <p>但是我们还有一些额外的操作无处存放（参数处理、返回值处理），且我们并不想将他们耦合在页面中每次调用进行处理，那么我们显然需要一个位置来处理这些内容。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Get <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../server&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token punctuation">{</span>
+  errno<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  errmsg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  data<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">ApiResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token builtin">any</span><span class="token punctuation">,</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token generic-function"><span class="token function">getUserInfo</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> name<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>
+  id
+<span class="token punctuation">)</span><span class="token operator">:</span> ApiResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">Get</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token string">&quot;/user/info&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> userid<span class="token operator">:</span> id <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="封包处理"><a href="#封包处理" class="header-anchor">#</a> 封包处理</h2> <h3 id="接口分类封包"><a href="#接口分类封包" class="header-anchor">#</a> 接口分类封包</h3> <p>用户数据： <code>api/path/user.ts</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Get <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../server&quot;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> userApi <span class="token operator">=</span> <span class="token punctuation">{</span>
+	getUserInfo<span class="token punctuation">,</span>
+	getUserName
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>订单数据： <code>api/path/shoporder.ts</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Get <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../server&quot;</span>
+
+<span class="token keyword">function</span> <span class="token function">getShoporderDetail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getShoporderList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> shoporderApi <span class="token operator">=</span> <span class="token punctuation">{</span>
+	getShoporderDetail<span class="token punctuation">,</span>
+	getShoporderList
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="调用点统一"><a href="#调用点统一" class="header-anchor">#</a> 调用点统一</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// api/index.ts;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> userApi <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./path/user&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> shoporderApi <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./path/shoporder&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>userApi<span class="token punctuation">,</span>
+  <span class="token operator">...</span>shoporderApi<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="针对所有接口的处理-post、put、del"><a href="#针对所有接口的处理-post、put、del" class="header-anchor">#</a> 针对所有接口的处理（Post、Put、Del）</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> IAnyObj<span class="token punctuation">,</span>
+  params<span class="token operator">:</span> IAnyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token builtin">any</span><span class="token punctuation">,</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>data <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span>err<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Put / Del 同理</span>
+</code></pre></div><h1 id="完整代码"><a href="#完整代码" class="header-anchor">#</a> 完整代码</h1> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd6e38d2b86242de960e08d7cd96fa36~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?" alt="文件结构.png">业务处理函数： <code>src/api/tool.ts</code></p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">const</span> handleRequestHeader <span class="token operator">=</span> <span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	config<span class="token punctuation">[</span>'xxxx'<span class="token punctuation">]</span> <span class="token operator">=</span> 'xxx'
+
+	<span class="token keyword">return</span> config
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> handleAuth <span class="token operator">=</span> <span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	config<span class="token punctuation">.</span>header<span class="token punctuation">[</span>'token'<span class="token punctuation">]</span> <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>'token'<span class="token punctuation">)</span> <span class="token operator">||</span> token <span class="token operator">||</span> ''
+	<span class="token keyword">return</span> config
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> handleNetworkError <span class="token operator">=</span> <span class="token punctuation">(</span>errStatus<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    let errMessage <span class="token operator">=</span> '未知错误'
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>errStatus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">switch</span> <span class="token punctuation">(</span>errStatus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            case <span class="token number">400</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '错误的请求'
+                <span class="token keyword">break</span>
+            case <span class="token number">401</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '未授权，请重新登录'
+                <span class="token keyword">break</span>
+            case <span class="token number">403</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '拒绝访问'
+                <span class="token keyword">break</span>
+            case <span class="token number">404</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '请求错误<span class="token punctuation">,</span>未找到该资源'
+                <span class="token keyword">break</span>
+            case <span class="token number">405</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '请求方法未允许'
+                <span class="token keyword">break</span>
+            case <span class="token number">408</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '请求超时'
+                <span class="token keyword">break</span>
+            case <span class="token number">500</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '服务器端出错'
+                <span class="token keyword">break</span>
+            case <span class="token number">501</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '网络未实现'
+                <span class="token keyword">break</span>
+            case <span class="token number">502</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '网络错误'
+                <span class="token keyword">break</span>
+            case <span class="token number">503</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '服务不可用'
+                <span class="token keyword">break</span>
+            case <span class="token number">504</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> '网络超时'
+                <span class="token keyword">break</span>
+            case <span class="token number">505</span><span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> 'http版本不支持该请求'
+                <span class="token keyword">break</span>
+            default<span class="token operator">:</span>
+                errMessage <span class="token operator">=</span> `其他连接错误 <span class="token operator">--</span>$<span class="token punctuation">{</span>errStatus<span class="token punctuation">}</span>`
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        errMessage <span class="token operator">=</span> `无法连接到服务器！`
+    <span class="token punctuation">}</span>
+
+    message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errMessage<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> handleAuthError <span class="token operator">=</span> <span class="token punctuation">(</span>errno<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> authErrMap<span class="token operator">:</span> any <span class="token operator">=</span> <span class="token punctuation">{</span>
+	  '<span class="token number">10031</span>'<span class="token operator">:</span> '登录失效，需要重新登录'<span class="token punctuation">,</span> <span class="token comment">// token 失效</span>
+	  '<span class="token number">10032</span>'<span class="token operator">:</span> '您太久没登录，请重新登录~'<span class="token punctuation">,</span> <span class="token comment">// token 过期</span>
+	  '<span class="token number">10033</span>'<span class="token operator">:</span> '账户未绑定角色，请联系管理员绑定角色'<span class="token punctuation">,</span>
+	  '<span class="token number">10034</span>'<span class="token operator">:</span> '该用户未注册，请联系管理员注册用户'<span class="token punctuation">,</span>
+	  '<span class="token number">10035</span>'<span class="token operator">:</span> 'code 无法获取对应第三方平台用户'<span class="token punctuation">,</span>
+	  '<span class="token number">10036</span>'<span class="token operator">:</span> '该账户未关联员工，请联系管理员做关联'<span class="token punctuation">,</span>
+	  '<span class="token number">10037</span>'<span class="token operator">:</span> '账号已无效'<span class="token punctuation">,</span>
+	  '<span class="token number">10038</span>'<span class="token operator">:</span> '账号未找到'<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>authErrMap<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>errno<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>authErrMap<span class="token punctuation">[</span>errno<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token comment">// 授权错误，登出账户</span>
+		<span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> handleGeneralError <span class="token operator">=</span> <span class="token punctuation">(</span>errno<span class="token punctuation">,</span> errmsg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>errno <span class="token operator">!==</span> <span class="token char">'0'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		meessage<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>通用操作封装： <code>src/api/server.ts</code></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;antd&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  handleChangeRequestHeader<span class="token punctuation">,</span>
+  handleConfigureAuth<span class="token punctuation">,</span>
+  handleAuthError<span class="token punctuation">,</span>
+  handleGeneralError<span class="token punctuation">,</span>
+  handleNetworkError<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./tools&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>data<span class="token operator">:</span> FcResponse<span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IAnyObj</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>index<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token punctuation">{</span>
+  errno<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  errmsg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  data<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  config <span class="token operator">=</span> <span class="token function">handleChangeRequestHeader</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  config <span class="token operator">=</span> <span class="token function">handleConfigureAuth</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">handleAuthError</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errno<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">handleGeneralError</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errno<span class="token punctuation">,</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errmsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">handleNetworkError</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Get <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  params<span class="token operator">:</span> IAnyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  clearFn<span class="token operator">?</span><span class="token operator">:</span> Fn
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token builtin">any</span><span class="token punctuation">,</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token operator">=&gt;</span>
+  <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> res<span class="token operator">:</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>clearFn <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          res <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">clearFn</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span> <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          res <span class="token operator">=</span> result<span class="token punctuation">.</span>data <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> res <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span>err<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Post <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+  url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> IAnyObj<span class="token punctuation">,</span>
+  params<span class="token operator">:</span> IAnyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token builtin">any</span><span class="token punctuation">,</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>data <span class="token keyword">as</span> FcResponse<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span>err<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>统一调用点： <code>src/api/index.ts</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> userApi <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./path/user&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> shoporderApi <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./path/shoporder&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>userApi<span class="token punctuation">,</span>
+  <span class="token operator">...</span>shoporderApi<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>接口： <code>src/api/path/user.ts</code> | <code>src/api/path/shoporder.ts</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Get <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../server&quot;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> userApi <span class="token operator">=</span> <span class="token punctuation">{</span>
+	getUserInfo<span class="token punctuation">,</span>
+	getUserName
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Get <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../server&quot;</span>
+
+<span class="token keyword">function</span> <span class="token function">getShoporderDetail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getShoporderList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> shoporderApi <span class="token operator">=</span> <span class="token punctuation">{</span>
+	getShoporderDetail<span class="token punctuation">,</span>
+	getShoporderList
+<span class="token punctuation">}</span>
+</code></pre></div><p><a href="https://juejin.cn/post/7124573626161954823/" target="_blank" rel="noopener noreferrer">原文地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div></div></div> <!----></div> <div class="right"><div class="test animated bounceInRight" data-v-f32ad2be><span class="labeltitle" data-v-f32ad2be>分类</span> <div class="label-container" data-v-f32ad2be><a href="/vuepress_theme_libra/category" class="container" data-v-3c951da0 data-v-f32ad2be>
+  All
+</a><a href="/vuepress_theme_libra/category/css" class="container" data-v-3c951da0 data-v-f32ad2be>
+  css
+</a><a href="/vuepress_theme_libra/category/英语" class="container" data-v-3c951da0 data-v-f32ad2be>
+  英语
+</a><a href="/vuepress_theme_libra/category/flutter" class="container" data-v-3c951da0 data-v-f32ad2be>
+  flutter
+</a><a href="/vuepress_theme_libra/category/javascript" class="container" data-v-3c951da0 data-v-f32ad2be>
+  javascript
+</a><a href="/vuepress_theme_libra/category/rfc" class="container" data-v-3c951da0 data-v-f32ad2be>
+  rfc
+</a><a href="/vuepress_theme_libra/category/algorithm" class="container" data-v-3c951da0 data-v-f32ad2be>
+  algorithm
+</a></div></div> <div class="my" data-v-546102e1><div class="header-info" data-v-546102e1><div class="avatar" data-v-546102e1><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/IMG_0386.JPG" alt class="avatar-img" data-v-546102e1></div> <span class="name" data-v-546102e1>Libra</span> <i class="mail" data-v-546102e1>libra085925@gmail.com</i> <div class="statistics" data-v-546102e1><span class="articles" data-v-546102e1>
+        39
+        <i class="white" data-v-546102e1> 文章</i></span> <span class="verticle-line white" data-v-546102e1>|</span> <span class="link" data-v-546102e1>
+        6
+        <i class="white" data-v-546102e1> 分类</i></span></div> <a href="/vuepress_theme_libra/contact" class="more" data-v-546102e1>联系我</a></div></div> <div class="list"><div><ul><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#效果演示">效果演示</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#基础请求流程">基础请求流程</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#拦截器">拦截器</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#统一调用">统一调用</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#开发顺序">开发顺序</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#针对所有接口的处理-get">针对所有接口的处理（Get）</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#请求拦截">请求拦截</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#响应拦截">响应拦截</a><ul><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#错误处理函数">错误处理函数</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#适配">适配</a></li></ul></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#针对单独接口的处理">针对单独接口的处理</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#封包处理">封包处理</a><ul><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#接口分类封包">接口分类封包</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#调用点统一">调用点统一</a></li><li><a href="/vuepress_theme_libra/2022/09/21/%E5%B0%81%E8%A3%85axios/#针对所有接口的处理-post、put、del">针对所有接口的处理（Post、Put、Del）</a></li></ul></li></ul></div></div></div></div> <div class="footer"><div class="left"><div class="wave-libra"><div class="wavetext"><div class="coast delay"><div class="wave-rel-wrap"><div class="wave delay"></div></div></div> <div class="text text-l">L</div> <div class="text text-i">i</div> <div class="text text-b">b</div> <div class="text text-r">r</div> <div class="text text-a">a</div></div></div></div> <div class="right">
+    Copyright © 2019-2022 Libra | 版权所有
+  </div></div></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress_theme_libra/assets/js/app.81b11391.js" defer></script><script src="/vuepress_theme_libra/assets/js/4.45950cb6.js" defer></script><script src="/vuepress_theme_libra/assets/js/44.a4552f11.js" defer></script>
+  </body>
+</html>

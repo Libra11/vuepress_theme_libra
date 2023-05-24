@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS层叠上下文 | Libra</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/vuepress_theme_libra/favicon.ico">
+    <meta name="description" content="a vuepress theme by libra">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/vuepress_theme_libra/assets/css/0.styles.c313087e.css" as="style"><link rel="preload" href="/vuepress_theme_libra/assets/js/app.81b11391.js" as="script"><link rel="preload" href="/vuepress_theme_libra/assets/js/4.45950cb6.js" as="script"><link rel="preload" href="/vuepress_theme_libra/assets/js/22.f43db1ee.js" as="script"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/1.2e06a9cb.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/10.60852d63.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/11.ee2a0c5d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/12.190660e2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/13.cb7fb853.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/14.416de39c.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/15.bf9ec89a.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/16.9a8b47a8.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/17.9168572d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/18.461c471f.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/19.d2698337.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/20.f18da4ad.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/21.85704b86.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/23.e31ab2b3.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/24.42421b44.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/25.1d55f477.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/26.48cbc0fe.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/27.9847d060.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/28.5e421513.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/29.dfb7b633.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/30.102e1636.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/31.2377072d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/32.63dede4d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/33.88c8d1bd.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/34.a7ab9026.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/35.07369c57.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/36.7b44d369.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/37.05d4c89f.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/38.dd7a2184.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/39.13a5cfc2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/40.2bdd360a.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/41.5e7eb681.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/42.72153d56.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/43.638dd185.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/44.a4552f11.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/45.d37a8e32.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/46.5d170fcc.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/47.d3fc8f48.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/48.d4daa220.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/49.180a1c96.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/5.76e49f54.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/50.5a96e7ed.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/51.c5d15611.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/52.c465ffcb.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/53.b7aca8de.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/54.1fe87c94.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/55.8e787bf0.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/56.21c25c0d.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/6.4bcad778.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/7.625d576e.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/8.2b069256.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/9.dc3026f2.js"><link rel="prefetch" href="/vuepress_theme_libra/assets/js/vuejs-paginate.710197ce.js">
+    <link rel="stylesheet" href="/vuepress_theme_libra/assets/css/0.styles.c313087e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="article"><nav class="topbar"><span class="logo"><span class="logo-text">L</span></span> <ul class="menu"><li class="menu-item"><a href="/vuepress_theme_libra/" class="link router-link-active">主页</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/blog" class="link">博客</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/photography" class="link">摄影</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/tag" class="link">标签</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/category" class="link">分类</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/timeline" class="link">时间线</a></li> <li class="menu-item"><a href="/vuepress_theme_libra/contact" class="link">联系我</a></li></ul> <div class="search"><i class="iconfont iconsearch"></i> <div class="search-box" data-v-89631566><input aria-label="Search" placeholder="请输入你想要搜索的内容..." autocomplete="off" spellcheck="false" value="" data-v-89631566> <!----></div></div> <span class="mobile-nav"><i class="iconfont iconnav"></i></span> <nav class="mobile-nav-item" style="display:none;"><div class="header-button"><i class="iconfont iconback"></i></div> <div class="header-info"><div class="avatar"><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/IMG_0386.JPG" alt="" class="avatar-img"></div> <span class="name">Libra</span> <i class="mail">libra085925@gmail.com</i> <div class="statistics"><span class="articles">
+            39
+            <i class="white"> 文章</i></span> <span class="verticle-line white">|</span> <span class="link">
+            6
+            <i class="white"> 分类</i></span></div></div> <div class="line"></div> <ul class="nav-menu"><li class="nav-menu-item"><a href="/vuepress_theme_libra/" class="router-link-active"><i class="iconfont iconhome"></i> <i class="white">主页</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/blog"><i class="iconfont iconblog"></i> <i class="white">博客</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/photography"><i class="iconfont iconblog"></i> <i class="white">摄影</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/tag"><i class="iconfont iconlabel"></i> <i class="white">标签</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/category"><i class="iconfont iconfenlei-"></i> <i class="white">分类</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/timeline"><i class="iconfont icontimeline"></i> <i class="white">时间线</i></a></li> <li class="nav-menu-item"><a href="/vuepress_theme_libra/contact"><i class="iconfont iconother"></i> <i class="white">联系我</i></a></li></ul></nav></nav> <div class="bg"></div> <div class="article-content"><div class="left"><span class="title animated rollIn">CSS层叠上下文</span> <ul class="label animated zoomInUp"><li class="date"><i class="iconfont iconshizhong"></i>
+          2023-02-27
+        </li> <li class="update"><i class="iconfont iconUpdate"></i>
+          2023-02-27
+        </li> <li class="labels"><i class="iconfont iconlabel"></i>
+          css
+        </li></ul> <div class="image"><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/stackingcontextcss.png" alt width="100%"></div> <div class="detail"><div><div class="content__default"><h2 id="css-中的层叠上下文"><a href="#css-中的层叠上下文" class="header-anchor">#</a> <code>CSS</code> 中的层叠上下文</h2> <h3 id="什么是层叠上下文"><a href="#什么是层叠上下文" class="header-anchor">#</a> 什么是层叠上下文</h3> <p>层叠上下文(<code>stacking context</code>)，是 HTML 中一个二维的概念，在<code>规范中有明确强调，每个</code>盒模型都是处在-个三维空间里面，他们分别处在平面的<code>x</code>轴，<code>Y</code>轴 以及表示层叠的 <code>z</code>轴了 如下图所示的三个盒子，他们分别在处在 <code>x</code>轴 和 Y 轴，同时在 <code>Z</code>轴上发生层叠。</p> <p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227095216298.png" alt="image-20230227095216298"></p> <p>但并不是所有的盒子都会在 <code>Z</code>轴 发生层叠,我们都知道，默认情况下，<code>HTML</code>元素在页面是沿 X 轴 和<code>Y</code>轴 平铺。如下图所示:元素默认从上往下，从左往右依次排列。所以我们察觉不到它们在<code>z</code>轴 上的层叠关系。</p> <p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227095313095.png" alt="image-20230227095313095"></p> <p>而一旦元素发生堆叠，我们就感受到一个元素覆盖了另一个元素，这时我们就能感受到<code>Z</code>轴 的存在。但是实事上，不管元素发不发生重叠，<code>Z</code>轴 都存在。</p> <p>理解了上面内容之后，那我们回过头来理解下，到底什么是层叠上下文?你可以把层叠上下文理解为<code>HTML</code>元素的一个属性，一但<code>HTML</code>元素拥有了这个属性，我们可以理解为这个<code>HTML</code>元素在 <code>z</code>轴 上就“高人一等”，也就是在<code>Z</code>轴上会显示在更上一层。</p> <h4 id="怎么个具象化法理解"><a href="#怎么个具象化法理解" class="header-anchor">#</a> 怎么个具象化法理解?</h4> <p>你可以把[层叠上下文] 理解为当官:网页中有很多很多的元素，我们可以看成是真实世界的芸芸众生。真实世界里，我们大多数人是普通老百姓们，还有一部分人是做官的官员。<code>0K</code>，这里的“官员”就可以理解为网页中的层叠上下文元素。
+换句话说，页面中的元素有了层桑上下文，就好比我们普通老百姓当了官，一旦当了官，相比普通老百姓而言，离皇帝更近了。同理，当元素有了层叠上下文，就相当于他比网页中其它元素的级别更高了，在<code>Z</code>轴上的位置就就高了，离我们用户 (屏幕)更近了，显示在更上一层。</p> <h3 id="层叠上下文的创建"><a href="#层叠上下文的创建" class="header-anchor">#</a> 层叠上下文的创建</h3> <p>层叠上下文也基本上是有一些特定的<code>CSS</code>属性创建的。主要由以下 3 点</p> <ul><li><p><code>html</code>根元素:页面根元素天生具有层叠上下文，称之为“根层叠上下文”</p></li> <li><p><code>z-index</code>值为数值的定位元素的传统层叠上下文<code>z-index:auto</code>不会创建层叠上下文。</p></li> <li><p>其他<code>CSS3</code>属性</p></li></ul> <h4 id="根层叠上下文"><a href="#根层叠上下文" class="header-anchor">#</a> 根层叠上下文</h4> <p>指的是页面根元素，也就是滚动条的默认的始作俑者<code>&lt;html&gt;</code>元素。这就是为什么，绝对定位元素在 <code>left</code> / <code>top</code>等值定位的时候，如果没有其他定位元素限制，会相对浏览器窗口定位的原因。</p> <p>我们写在<code>body</code>中的<code>HTML</code>标签，默认的就是处在<code>HTML</code>这个根层叠上下文中，在这个层叠上下文中各元素在<code>z</code>轴上有着自己的排列顺序，具体如何排列，后面层叠顺序会讲到。</p> <h4 id="定位元素与传统层叠上下文"><a href="#定位元素与传统层叠上下文" class="header-anchor">#</a> 定位元素与传统层叠上下文</h4> <ul><li><p>对于包含有 <code>position:relative/position:absolute</code>的定位元素，当其<code>z-index</code>值不是 <code>auto</code> 的时候,会创建层叠上下</p></li> <li><p>position 值为 <code>fixed</code> (固定定位) 或 <code>sticky</code> (粘滞定位) 的元素</p> <blockquote><p>当我们给元素添加定位和 z-index 时，元素就会显示在其它元素的上面，本质就是因为他拥有了自己的层叠上下文，在 Z 轴上要比其它未拥有层叠上下文的元素更高一等。</p></blockquote></li></ul> <h4 id="css3与新时代的层叠上下文"><a href="#css3与新时代的层叠上下文" class="header-anchor">#</a> <code>CSS3</code>与新时代的层叠上下文</h4> <p><code>CSS3</code>的出现除了带来了新属性，同时还对过去的很多规则发出了挑战。例如，<code>CSS3 transform</code> [对<code>overflow</code>隐藏对<code>position:fixed</code>定位的影响等。而这里，层桑上下文这一块的影响要更加广泛与易著.如下:</p> <ul><li><p>父元素的 display 属性值为<code>flex|inline-flex</code>，子元素<code>z-index</code>属性值不为<code>auto</code>的时候，子元素为层叠上下文元素；</p></li> <li><p>元素的<code>opacity</code>属性值不是<code>1</code>；</p></li> <li><p>元素的<code>transform</code>属性值不是<code>none</code>；</p></li> <li><p>元素<code>mix-blend-mode属性值不是</code>normal`；</p></li> <li><p>元素的<code>filter</code>属性值不是<code>none</code>；</p></li> <li><p>元素的<code>isolation</code>属性值是<code>isolate</code>；</p></li> <li><p><code>will-change</code>指定的属性值为上面任意一个；</p></li> <li><p>元素的<code>-webkit-overflow-scrolling</code>属性值设置为<code>touch</code>。</p></li></ul> <h3 id="什么是层叠顺序"><a href="#什么是层叠顺序" class="header-anchor">#</a> 什么是层叠顺序</h3> <p>我们都知道，除了定位的元素会覆盖在其它元素的上面之外，还有很多情况下元素会发生重叠，那发生重叠时元素是以什么样的顺序来重桑的呢?这就是我们接下来要讲的元素的层叠顺序
+&quot;层叠顺序”英文称作”<code>stacking order</code>”表示元素发生层叠时候有着特定的垂直显示顺序。
+我们页面中的元素有: 块级元素，行内元素，行内块元素，浮动元素，定位元素，还有后面学到的一些<code>CSS3</code>属性，当元素添加相关属性后，元素的层级也会发生改变。以下图只列出了目前学到的相关元素在同一层叠上下文中的层叠顺序。</p> <p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227100719701.png" alt="image-20230227100719701"></p> <p>同一层叠上下文，元素的层叠顺序，参考上图，由上到下分别</p> <ol><li>背景和边框:建立当前层叠上下文元素的背景和边框.</li> <li>负的 <code>z-index</code>:当前层叠上下文中，<code>z-index</code> 属性值为负的元素</li> <li>块级盒:文档流内非行内级非定位后代元素</li> <li>浮动盒:非定位浮动元素。</li> <li>行内盒:文档流内行内级非定位后代元素</li> <li><code>z-index:0</code>: 层叠级数为<code>0</code>的定位元素.</li> <li>正 <code>z-index: z-index</code> 属性值为正的定位元素</li></ol> <h3 id="案例"><a href="#案例" class="header-anchor">#</a> 案例</h3> <h4 id="元素都处在html层叠上下文中"><a href="#元素都处在html层叠上下文中" class="header-anchor">#</a> 元素都处在<code>html</code>层叠上下文中</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ddd<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box1</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> -30px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> -30px<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box2</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box3</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> tomato<span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> -63px<span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> 37px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box4</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> -23px<span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> -172px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box5</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blueviolet<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 117px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 102px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box6</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> aquamarine<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 153px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 134px<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  html
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>z-index: -1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>float<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>inline-block/inline<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>z-index: 0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box box6<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>z-index: 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227103001396.png" alt="image-20230227103001396"></p> <blockquote><p>重点提示:
+如果元素的等级一样，则写在后面的会覆盖在前面的上面如块级和块级，浮动和浮动，行内块与行内块，定位与定位元素，发生重叠时，默认的写在后面的会在最上面显示</p></blockquote> <h4 id="当元素处于定位元素的层叠上下文中"><a href="#当元素处于定位元素的层叠上下文中" class="header-anchor">#</a> 当元素处于定位元素的层叠上下文中</h4> <p>当相对定位元素处在<code>html</code>层叠上下文中，设置<code>z-index:-1</code>时，元素会在所有元素的下面显示.</p> <p>当相对定位元素处在定位元素的层叠上下文中，设置<code>z-index-1</code>时，元素会在当前层叠上下文元素中所有元素的最下面。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.box,
+  .box2</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.item,
+  .item2</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> khaki<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> -40px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> -40px<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    box是层叠上下文
+    <span class="token comment">&lt;!-- box 是层叠上下文 item相对于box层叠上下文，所以负的z-index排在box层叠上下文background-color上面 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    box2不是层叠上下文
+    <span class="token comment">&lt;!-- box2 不是层叠上下文 z-index是-1，item相对于html层叠上下文，所以负的z-index排在最下面 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227104859678.png" alt="image-20230227104859678"></p> <h4 id="不同层叠上下文中子元素的层叠顺序"><a href="#不同层叠上下文中子元素的层叠顺序" class="header-anchor">#</a> 不同层叠上下文中子元素的层叠顺序</h4> <p>如下图的<code>B</code>和 C 都创建了自己的层叠上下文，那<code>B</code>中的子元素和<code>C</code>中的子元素的层叠顺序是怎么样的?</p> <p><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/image-20230227105245047.png" alt="image-20230227105245047"></p> <p>这个不写例子了，一句结论：</p> <p><strong>谁的层叠上下文等级高，谁的子元素层级就高</strong></p></div></div></div> <!----></div> <div class="right"><div class="test animated bounceInRight" data-v-f32ad2be><span class="labeltitle" data-v-f32ad2be>分类</span> <div class="label-container" data-v-f32ad2be><a href="/vuepress_theme_libra/category" class="container" data-v-3c951da0 data-v-f32ad2be>
+  All
+</a><a href="/vuepress_theme_libra/category/css" class="container" data-v-3c951da0 data-v-f32ad2be>
+  css
+</a><a href="/vuepress_theme_libra/category/英语" class="container" data-v-3c951da0 data-v-f32ad2be>
+  英语
+</a><a href="/vuepress_theme_libra/category/flutter" class="container" data-v-3c951da0 data-v-f32ad2be>
+  flutter
+</a><a href="/vuepress_theme_libra/category/javascript" class="container" data-v-3c951da0 data-v-f32ad2be>
+  javascript
+</a><a href="/vuepress_theme_libra/category/rfc" class="container" data-v-3c951da0 data-v-f32ad2be>
+  rfc
+</a><a href="/vuepress_theme_libra/category/algorithm" class="container" data-v-3c951da0 data-v-f32ad2be>
+  algorithm
+</a></div></div> <div class="my" data-v-546102e1><div class="header-info" data-v-546102e1><div class="avatar" data-v-546102e1><img src="https://libra321.oss-cn-huhehaote.aliyuncs.com/img/IMG_0386.JPG" alt class="avatar-img" data-v-546102e1></div> <span class="name" data-v-546102e1>Libra</span> <i class="mail" data-v-546102e1>libra085925@gmail.com</i> <div class="statistics" data-v-546102e1><span class="articles" data-v-546102e1>
+        39
+        <i class="white" data-v-546102e1> 文章</i></span> <span class="verticle-line white" data-v-546102e1>|</span> <span class="link" data-v-546102e1>
+        6
+        <i class="white" data-v-546102e1> 分类</i></span></div> <a href="/vuepress_theme_libra/contact" class="more" data-v-546102e1>联系我</a></div></div> <div class="list"><div><ul><li><a href="/vuepress_theme_libra/2023/02/27/css%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87/#css-中的层叠上下文">CSS 中的层叠上下文</a><ul><li><a href="/vuepress_theme_libra/2023/02/27/css%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87/#什么是层叠上下文">什么是层叠上下文</a></li><li><a href="/vuepress_theme_libra/2023/02/27/css%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87/#层叠上下文的创建">层叠上下文的创建</a></li><li><a href="/vuepress_theme_libra/2023/02/27/css%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87/#什么是层叠顺序">什么是层叠顺序</a></li><li><a href="/vuepress_theme_libra/2023/02/27/css%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87/#案例">案例</a></li></ul></li></ul></div></div></div></div> <div class="footer"><div class="left"><div class="wave-libra"><div class="wavetext"><div class="coast delay"><div class="wave-rel-wrap"><div class="wave delay"></div></div></div> <div class="text text-l">L</div> <div class="text text-i">i</div> <div class="text text-b">b</div> <div class="text text-r">r</div> <div class="text text-a">a</div></div></div></div> <div class="right">
+    Copyright © 2019-2022 Libra | 版权所有
+  </div></div></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress_theme_libra/assets/js/app.81b11391.js" defer></script><script src="/vuepress_theme_libra/assets/js/4.45950cb6.js" defer></script><script src="/vuepress_theme_libra/assets/js/22.f43db1ee.js" defer></script>
+  </body>
+</html>
